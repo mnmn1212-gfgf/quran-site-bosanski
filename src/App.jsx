@@ -1035,42 +1035,44 @@ export default function QuranTranslationLandingPage() {
               initial="hidden"
               animate="show"
               variants={fadeUp}
-              className={`mx-auto flex items-center justify-between gap-3 rounded-[1.5rem] px-3 py-3 sm:rounded-[2rem] sm:px-4 ${glass}`}
+              className={`mx-auto rounded-[1.5rem] p-[2px] sm:rounded-[2rem] ${OUTER_GRADIENT}`}
             >
-              <div className="flex min-w-0 items-center gap-3 sm:gap-4">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-full border border-yellow-100/20 bg-white/10 shadow-[0_0_16px_rgba(59,130,246,0.16)] sm:h-16 sm:w-16">
-                  <img
-                    src={sanaLogo}
-                    alt="Logo Sana Kur'anskih Kanala"
-                    className="h-full w-full object-cover"
-                    loading="eager"
-                    decoding="async"
-                  />
+              <div className="flex items-center justify-between gap-3 rounded-[1.5rem] border border-white/10 bg-white/10 px-3 py-3 backdrop-blur-xl shadow-[0_8px_22px_rgba(0,0,0,0.14)] sm:rounded-[2rem] sm:px-4">
+                <div className="flex min-w-0 items-center gap-3 sm:gap-4">
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-full border border-yellow-100/20 bg-white/10 shadow-[0_0_16px_rgba(59,130,246,0.16)] sm:h-16 sm:w-16">
+                    <img
+                      src={sanaLogo}
+                      alt="Logo Sana Kur'anskih Kanala"
+                      className="h-full w-full object-cover"
+                      loading="eager"
+                      decoding="async"
+                    />
+                  </div>
+                  <div className="truncate text-sm font-bold tracking-wide sm:text-xl">
+                    Sana Kur'anski Kanali
+                  </div>
                 </div>
-                <div className="truncate text-sm font-bold tracking-wide sm:text-xl">
-                  Sana Kur'anski Kanali
-                </div>
+
+                <nav className="hidden items-center gap-3 md:flex">
+                  {navItems.map((item) => (
+                    <a
+                      key={item.href}
+                      href={item.href}
+                      className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-white/85 transition hover:border-blue-200/30 hover:bg-white/10 hover:text-blue-100"
+                    >
+                      {item.label}
+                    </a>
+                  ))}
+                </nav>
+
+                <button
+                  type="button"
+                  onClick={() => setMenuOpen((v) => !v)}
+                  className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-white/5 md:hidden"
+                >
+                  <Menu className="h-5 w-5" />
+                </button>
               </div>
-
-              <nav className="hidden items-center gap-3 md:flex">
-                {navItems.map((item) => (
-                  <a
-                    key={item.href}
-                    href={item.href}
-                    className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-white/85 transition hover:border-blue-200/30 hover:bg-white/10 hover:text-blue-100"
-                  >
-                    {item.label}
-                  </a>
-                ))}
-              </nav>
-
-              <button
-                type="button"
-                onClick={() => setMenuOpen((v) => !v)}
-                className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-white/5 md:hidden"
-              >
-                <Menu className="h-5 w-5" />
-              </button>
             </motion.div>
 
             {menuOpen && (
