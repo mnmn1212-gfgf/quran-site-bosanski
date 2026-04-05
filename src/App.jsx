@@ -1584,7 +1584,7 @@ export default function QuranTranslationLandingPage() {
             <div className={`rounded-[2rem] px-4 py-6 sm:px-6 sm:py-8 lg:px-10 ${glass}`}>
               <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr_1fr]">
                 <div
-                  className={`rounded-[1.8rem] border border-white/10 p-4 text-center sm:p-6 ${INNER_GRADIENT} flex h-full flex-col items-center justify-center`}
+                  className="rounded-[1.8rem] border border-white/10 p-4 text-center sm:p-6 bg-[linear-gradient(135deg,rgba(8,28,59,0.96)_0%,rgba(14,44,92,0.93)_48%,rgba(28,71,138,0.90)_100%)] backdrop-blur-md flex h-full flex-col items-center justify-center"
                 >
                   <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full border border-white/15 bg-white/10 shadow-[0_0_18px_rgba(255,255,255,0.06)] backdrop-blur-md sm:h-24 sm:w-24">
                     <img
