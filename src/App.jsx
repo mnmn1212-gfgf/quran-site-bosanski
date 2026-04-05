@@ -39,9 +39,12 @@ const ACCENT = "#F7D774";
 const CTA_DARK = "#0D2240";
 
 const OUTER_GRADIENT =
-  "bg-[linear-gradient(135deg,rgba(17,42,92,0.96)_0%,rgba(24,55,112,0.94)_52%,rgba(31,67,128,0.92)_100%)]";
+  "bg-[linear-gradient(135deg,rgba(8,28,59,0.96)_0%,rgba(14,44,92,0.93)_48%,rgba(28,71,138,0.90)_100%)]";
 const INNER_GRADIENT =
   "bg-[linear-gradient(135deg,rgba(7,18,39,0.96)_0%,rgba(11,33,67,0.92)_100%)]";
+
+const UNIFIED_CARD_GRADIENT =
+  "bg-[linear-gradient(135deg,rgba(23,46,92,0.98)_0%,rgba(31,62,116,0.96)_52%,rgba(43,84,150,0.94)_100%)]";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 20 },
@@ -680,7 +683,7 @@ function StructuredCard({ icon: Icon, title, desc, isMobile }) {
       className={`${gradientOuterCard} h-full p-4 sm:p-5`}
     >
       <div className="h-full rounded-[1.5rem] border border-white/10 bg-white/[0.06] p-4">
-        <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-[linear-gradient(135deg,rgba(17,42,92,0.96)_0%,rgba(24,55,112,0.94)_52%,rgba(31,67,128,0.92)_100%)] px-4 py-3">
+        <div className={`flex items-center gap-3 rounded-2xl border border-white/10 ${UNIFIED_CARD_GRADIENT} px-4 py-3`}>
           <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-[#2b4779]/80">
             <Icon className="h-5 w-5" style={{ color: ACCENT }} />
           </div>
@@ -688,7 +691,7 @@ function StructuredCard({ icon: Icon, title, desc, isMobile }) {
             {title}
           </h3>
         </div>
-        <div className="mt-4 rounded-2xl border border-white/10 bg-[#102a57]/92 px-4 py-4 text-sm leading-7 text-white/78 sm:text-base sm:leading-8">
+        <div className={`mt-4 rounded-2xl border border-white/10 ${UNIFIED_CARD_GRADIENT} px-4 py-4 text-sm leading-7 text-white/78 sm:text-base sm:leading-8`}>
           {desc}
         </div>
       </div>
@@ -703,7 +706,7 @@ function IdentityCard({ icon: Icon, title, text, large = false, isMobile }) {
       className={`${softCard} h-full p-4 sm:p-5`}
     >
       <div className="h-full rounded-[1.5rem] border border-white/10 bg-white/[0.06] p-4">
-        <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-[linear-gradient(135deg,rgba(17,42,92,0.96)_0%,rgba(24,55,112,0.94)_52%,rgba(31,67,128,0.92)_100%)] px-4 py-3">
+        <div className={`flex items-center gap-3 rounded-2xl border border-white/10 ${UNIFIED_CARD_GRADIENT} px-4 py-3`}>
           <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-[#2b4779]/80">
             <Icon className="h-5 w-5" style={{ color: ACCENT }} />
           </div>
@@ -716,7 +719,7 @@ function IdentityCard({ icon: Icon, title, text, large = false, isMobile }) {
           </div>
         </div>
         <div
-          className={`mt-4 rounded-2xl border border-white/10 bg-[#102a57]/92 px-4 py-4 text-white/80 ${
+          className={`mt-4 rounded-2xl border border-white/10 ${UNIFIED_CARD_GRADIENT} px-4 py-4 text-white/80 ${
             large
               ? "text-base leading-8 sm:text-lg sm:leading-9 lg:text-xl lg:leading-10"
               : "text-base leading-8 sm:text-lg"
@@ -736,7 +739,7 @@ function ImpactCard({ icon: Icon, title, desc, isMobile }) {
       className={`${softCard} h-full p-4 sm:p-5`}
     >
       <div className="h-full rounded-[1.5rem] border border-white/10 bg-white/[0.06] p-4">
-        <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-[linear-gradient(135deg,rgba(17,42,92,0.96)_0%,rgba(24,55,112,0.94)_52%,rgba(31,67,128,0.92)_100%)] px-4 py-3">
+        <div className={`flex items-center gap-3 rounded-2xl border border-white/10 ${UNIFIED_CARD_GRADIENT} px-4 py-3`}>
           <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-[#2b4779]/80">
             <Icon className="h-5 w-5" style={{ color: ACCENT }} />
           </div>
@@ -744,7 +747,7 @@ function ImpactCard({ icon: Icon, title, desc, isMobile }) {
             {title}
           </h3>
         </div>
-        <div className="mt-4 rounded-2xl border border-white/10 bg-[#102a57]/92 px-4 py-4 text-sm leading-7 text-white/78 sm:text-base sm:leading-8">
+        <div className={`mt-4 rounded-2xl border border-white/10 ${UNIFIED_CARD_GRADIENT} px-4 py-4 text-sm leading-7 text-white/78 sm:text-base sm:leading-8`}>
           {desc}
         </div>
       </div>
@@ -904,7 +907,7 @@ function ProtectedHlsVideoCard({
         </div>
       </div>
 
-      <div className="mt-4 rounded-[1.3rem] border border-white/10 bg-[#102a57]/92 p-3 sm:p-4">
+      <div className={`mt-4 rounded-[1.3rem] border border-white/10 ${UNIFIED_CARD_GRADIENT} p-3 sm:p-4`}>
         <div className="flex flex-wrap items-center gap-2">
           <button
             type="button"
@@ -1083,7 +1086,7 @@ export default function QuranTranslationLandingPage() {
                       key={item.href}
                       href={item.href}
                       onClick={() => setMenuOpen(false)}
-                      className="rounded-2xl border border-white/10 bg-[linear-gradient(135deg,rgba(17,42,92,0.96)_0%,rgba(24,55,112,0.94)_52%,rgba(31,67,128,0.92)_100%)] px-4 py-3 text-sm text-white/85 sm:text-base"
+                      className={`rounded-2xl border border-white/10 ${UNIFIED_CARD_GRADIENT} px-4 py-3 text-sm text-white/85 sm:text-base`}
                     >
                       {item.label}
                     </a>
@@ -1183,7 +1186,7 @@ export default function QuranTranslationLandingPage() {
                             ease: "easeInOut",
                           }
                     }
-                    className="rounded-3xl border border-white/10 bg-[linear-gradient(135deg,rgba(17,42,92,0.96)_0%,rgba(24,55,112,0.94)_52%,rgba(31,67,128,0.92)_100%)] p-3 text-center backdrop-blur-md shadow-[0_6px_16px_rgba(0,0,0,0.12)] sm:p-4"
+                    className="rounded-3xl border border-white/10 bg-[linear-gradient(135deg,rgba(8,28,59,0.96)_0%,rgba(14,44,92,0.93)_48%,rgba(28,71,138,0.90)_100%)] p-3 text-center backdrop-blur-md shadow-[0_6px_16px_rgba(0,0,0,0.12)] sm:p-4"
                   >
                     <div className="text-xl font-black sm:text-2xl" style={{ color: ACCENT }}>
                       {item.value}
@@ -1218,7 +1221,7 @@ export default function QuranTranslationLandingPage() {
                     </div>
                   </div>
 
-                  <div className="mt-6 rounded-[1.4rem] border border-white/10 bg-[#102a57]/92 p-4 sm:mt-8 sm:p-6">
+                  <div className={`mt-6 rounded-[1.4rem] border border-white/10 ${UNIFIED_CARD_GRADIENT} p-4 sm:mt-8 sm:p-6`}>
                     <div className="mb-4 flex items-start gap-3 text-sm text-white/80 sm:items-center sm:text-base">
                       <Headphones className="mt-0.5 h-5 w-5 shrink-0 text-blue-200 sm:mt-0" />
                       <span>Slušajte učenje uz vizuelni prikaz značenja Kur'ana</span>
@@ -1245,7 +1248,7 @@ export default function QuranTranslationLandingPage() {
                       {heroCards.map((item) => (
                         <div
                           key={item.label}
-                          className="rounded-2xl border border-white/10 bg-[linear-gradient(135deg,rgba(17,42,92,0.96)_0%,rgba(24,55,112,0.94)_52%,rgba(31,67,128,0.92)_100%)] p-3 sm:p-4"
+                          className={`rounded-2xl border border-white/10 ${UNIFIED_CARD_GRADIENT} p-3 sm:p-4`}
                         >
                           <div className="text-sm font-bold sm:text-lg" style={{ color: ACCENT }}>
                             {item.value}
@@ -1268,7 +1271,7 @@ export default function QuranTranslationLandingPage() {
                   return (
                     <div
                       key={item.title}
-                      className="w-full rounded-[1.4rem] border border-white/10 bg-[linear-gradient(135deg,rgba(17,42,92,0.96)_0%,rgba(24,55,112,0.94)_52%,rgba(31,67,128,0.92)_100%)] px-5 py-4 text-center backdrop-blur-md shadow-[0_6px_16px_rgba(0,0,0,0.12)] sm:min-w-[220px] sm:w-auto sm:rounded-[1.6rem]"
+                      className="w-full rounded-[1.4rem] border border-white/10 bg-[linear-gradient(135deg,rgba(8,28,59,0.96)_0%,rgba(14,44,92,0.93)_48%,rgba(28,71,138,0.90)_100%)] px-5 py-4 text-center backdrop-blur-md shadow-[0_6px_16px_rgba(0,0,0,0.12)] sm:min-w-[220px] sm:w-auto sm:rounded-[1.6rem]"
                     >
                       <div className="flex items-center justify-center gap-3">
                         <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 bg-white/5 sm:h-11 sm:w-11">
@@ -1340,7 +1343,7 @@ export default function QuranTranslationLandingPage() {
 
               <div className="relative z-10">
                 <div className="grid gap-6 lg:grid-cols-2 lg:items-stretch lg:gap-8">
-                  <div className="rounded-[1.8rem] border border-white/10 bg-[#102a57]/92 p-4 sm:p-6">
+                  <div className={`rounded-[1.8rem] border border-white/10 ${UNIFIED_CARD_GRADIENT} p-4 sm:p-6`}>
                     <div className="h-full rounded-2xl border border-white/10 bg-white/[0.06] p-4 sm:p-5">
                       <h2 className="text-2xl font-black sm:text-3xl lg:text-4xl">
                         Pouzdano partnersko izvođenje
@@ -1357,7 +1360,7 @@ export default function QuranTranslationLandingPage() {
                     </div>
                   </div>
 
-                  <div className="rounded-[1.8rem] border border-white/10 bg-[#102a57]/92 p-4 sm:p-6">
+                  <div className={`rounded-[1.8rem] border border-white/10 ${UNIFIED_CARD_GRADIENT} p-4 sm:p-6`}>
                     <div className="flex h-full flex-col justify-center rounded-2xl border border-white/10 bg-white/[0.06] p-4 sm:p-5">
                       <div className="text-sm text-white/60">Zvanična stranica</div>
                       <div className="mt-2 text-xl font-bold sm:text-2xl">Jasco Media City</div>
@@ -1561,7 +1564,7 @@ export default function QuranTranslationLandingPage() {
               <div
                 className={`mt-8 rounded-[2rem] p-4 sm:p-6 md:p-8 ${gradientOuterCard}`}
               >
-                <div className="rounded-[2rem] border border-white/10 bg-[#102a57]/92 p-4 sm:p-6">
+                <div className={`rounded-[2rem] border border-white/10 ${UNIFIED_CARD_GRADIENT} p-4 sm:p-6`}>
                   <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.06] p-4 sm:p-5">
                     <div className="mb-4 text-xl font-bold sm:text-2xl">Kontaktirajte nas</div>
                     <div className="space-y-3 text-white/75">
@@ -1586,7 +1589,7 @@ export default function QuranTranslationLandingPage() {
             <div className={`rounded-[2rem] px-4 py-6 sm:px-6 sm:py-8 lg:px-10 ${glass}`}>
               <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr_1fr]">
                 <div
-                  className="rounded-[1.8rem] border border-white/10 p-4 text-center sm:p-6 bg-[linear-gradient(135deg,rgba(17,42,92,0.96)_0%,rgba(24,55,112,0.94)_52%,rgba(31,67,128,0.92)_100%)] backdrop-blur-md flex h-full flex-col items-center justify-center"
+                  className="rounded-[1.8rem] border border-white/10 p-4 text-center sm:p-6 bg-[linear-gradient(135deg,rgba(8,28,59,0.96)_0%,rgba(14,44,92,0.93)_48%,rgba(28,71,138,0.90)_100%)] backdrop-blur-md flex h-full flex-col items-center justify-center"
                 >
                   <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full border border-white/15 bg-white/10 shadow-[0_0_18px_rgba(255,255,255,0.06)] backdrop-blur-md sm:h-24 sm:w-24">
                     <img
@@ -1608,12 +1611,12 @@ export default function QuranTranslationLandingPage() {
                     Sana... poruka svjetovima
                   </div>
 
-                  <p className="mx-auto mt-4 max-w-[30rem] rounded-[1.4rem] border border-white/10 bg-[rgba(11,40,84,0.55)] px-4 py-4 text-sm leading-7 text-white/78 sm:px-5 sm:text-base sm:leading-8">
+                  <p className={`mx-auto mt-4 max-w-[30rem] rounded-[1.4rem] border border-white/10 ${UNIFIED_CARD_GRADIENT} px-4 py-4 text-sm leading-7 text-white/78 sm:px-5 sm:text-base sm:leading-8`}>
                     Audio i video kanali za prijevod značenja Kur'ana na sve svjetske jezike, kroz vakufski projekat koji spaja ljepotu prikaza, preciznost značenja i duh poruke.
                   </p>
                 </div>
 
-                <div className="rounded-[1.8rem] border border-white/10 bg-[linear-gradient(135deg,rgba(17,42,92,0.96)_0%,rgba(24,55,112,0.94)_52%,rgba(31,67,128,0.92)_100%)] p-4 backdrop-blur-md sm:p-5 flex flex-col items-center justify-center text-center">
+                <div className="rounded-[1.8rem] border border-white/10 bg-[linear-gradient(135deg,rgba(8,28,59,0.96)_0%,rgba(14,44,92,0.93)_48%,rgba(28,71,138,0.90)_100%)] p-4 backdrop-blur-md sm:p-5 flex flex-col items-center justify-center text-center">
                   <div className="mb-5 flex flex-col items-center justify-center gap-4 text-lg font-bold text-white sm:text-xl">
                     <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-white/5 shadow-[0_8px_18px_rgba(0,0,0,0.14)]">
                       <MessageCircle className="h-6 w-6" style={{ color: ACCENT }} />
@@ -1624,19 +1627,19 @@ export default function QuranTranslationLandingPage() {
                   <div className="w-full space-y-4 text-white/72">
                     <a
                       href="mailto:snachannel159@gmail.com"
-                      className="flex items-center justify-center gap-3 break-all rounded-2xl border border-white/10 bg-[#102a57]/92 px-4 py-3 text-sm transition hover:bg-white/10 sm:text-base"
+                      className={`flex items-center justify-center gap-3 break-all rounded-2xl border border-white/10 ${UNIFIED_CARD_GRADIENT} px-4 py-3 text-sm transition hover:bg-white/10 sm:text-base`}
                     >
                       <Mail className="h-4 w-4 shrink-0" style={{ color: ACCENT }} />
                       snachannel159@gmail.com
                     </a>
 
-                    <div className="flex items-center justify-center gap-3 rounded-2xl border border-white/10 bg-[#102a57]/92 px-4 py-3 text-sm sm:text-base">
+                    <div className={`flex items-center justify-center gap-3 rounded-2xl border border-white/10 ${UNIFIED_CARD_GRADIENT} px-4 py-3 text-sm sm:text-base`}>
                       <MapPin className="h-4 w-4 shrink-0" style={{ color: ACCENT }} />
                       Amman - Jordan
                     </div>
                   </div>
 
-                  <div className="mt-6 w-full rounded-[1.4rem] border border-white/10 bg-[#102a57]/92 p-4">
+                  <div className={`mt-6 w-full rounded-[1.4rem] border border-white/10 ${UNIFIED_CARD_GRADIENT} p-4`}>
                     <a
                       href="https://www.facebook.com/share/1FVbmggbzc/"
                       target="_blank"
@@ -1653,7 +1656,7 @@ export default function QuranTranslationLandingPage() {
                   </div>
                 </div>
 
-                <div className="rounded-[1.8rem] border border-white/10 bg-[linear-gradient(135deg,rgba(17,42,92,0.96)_0%,rgba(24,55,112,0.94)_52%,rgba(31,67,128,0.92)_100%)] p-4 backdrop-blur-md sm:p-5 flex flex-col items-center justify-center text-center">
+                <div className="rounded-[1.8rem] border border-white/10 bg-[linear-gradient(135deg,rgba(8,28,59,0.96)_0%,rgba(14,44,92,0.93)_48%,rgba(28,71,138,0.90)_100%)] p-4 backdrop-blur-md sm:p-5 flex flex-col items-center justify-center text-center">
                   <div className="mb-5 flex flex-col items-center justify-center gap-4 text-lg font-bold text-white sm:text-xl">
                     <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-white/5 shadow-[0_8px_18px_rgba(0,0,0,0.14)]">
                       <Link2 className="h-6 w-6" style={{ color: ACCENT }} />
@@ -1661,7 +1664,7 @@ export default function QuranTranslationLandingPage() {
                     <span>Linkovi naše aplikacije</span>
                   </div>
 
-                  <div className="w-full rounded-[1.4rem] border border-white/10 bg-[#102a57]/92 p-4">
+                  <div className={`w-full rounded-[1.4rem] border border-white/10 ${UNIFIED_CARD_GRADIENT} p-4`}>
                     <p className="mb-4 text-sm leading-7 text-white/65">
                       Preuzmite aplikaciju i jednostavno pratite kur'anski sadržaj putem zvaničnih platformi.
                     </p>
@@ -1700,7 +1703,7 @@ export default function QuranTranslationLandingPage() {
                       </a>
                     </div>
 
-                    <div className="mt-5 rounded-[1.4rem] border border-white/10 bg-[#102a57]/92 p-4">
+                    <div className={`mt-5 rounded-[1.4rem] border border-white/10 ${UNIFIED_CARD_GRADIENT} p-4`}>
                       <div className="flex flex-wrap items-center justify-center gap-4 text-xs text-white/65">
                         <span>⭐ Ocjena 4.9</span>
                         <span>🌍 100+ država</span>
