@@ -1345,7 +1345,7 @@ export default function QuranTranslationLandingPage() {
 
               <div className="relative z-10">
                 <div className="grid gap-6 lg:grid-cols-2 lg:items-stretch lg:gap-8">
-                  <div className={`rounded-[1.8rem] border border-white/10 ${CARD_INNER_GRADIENT} p-4 sm:p-6`}>
+                  <div className={`rounded-[1.8rem] border border-white/10 ${CARD_GRADIENT} p-4 sm:p-6`}>
                     <div className="h-full rounded-2xl border border-white/10 bg-white/[0.06] p-4 sm:p-5">
                       <h2 className="text-2xl font-black sm:text-3xl lg:text-4xl">
                         Pouzdano partnersko izvođenje
@@ -1362,7 +1362,7 @@ export default function QuranTranslationLandingPage() {
                     </div>
                   </div>
 
-                  <div className={`rounded-[1.8rem] border border-white/10 ${CARD_INNER_GRADIENT} p-4 sm:p-6`}>
+                  <div className={`rounded-[1.8rem] border border-white/10 ${CARD_GRADIENT} p-4 sm:p-6`}>
                     <div className="flex h-full flex-col justify-center rounded-2xl border border-white/10 bg-white/[0.06] p-4 sm:p-5">
                       <div className="text-sm text-white/60">Zvanična stranica</div>
                       <div className="mt-2 text-xl font-bold sm:text-2xl">Jasco Media City</div>
