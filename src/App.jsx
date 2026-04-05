@@ -1215,7 +1215,7 @@ export default function QuranTranslationLandingPage() {
                     <div>
                       <p className="text-xs text-white/60 sm:text-sm">Trenutni jezik</p>
                       <h3 className="mt-1 text-xl font-bold sm:text-2xl">
-                        Kur'an na arapskom jeziku
+                        Kur'an na bosanskom jeziku
                       </h3>
                     </div>
                     <div className="w-fit rounded-2xl border border-blue-300/20 bg-white/[0.06] px-4 py-2 text-xs text-white sm:text-sm">
