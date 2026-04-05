@@ -1042,7 +1042,7 @@ export default function QuranTranslationLandingPage() {
               variants={fadeUp}
               className={`mx-auto rounded-[1.5rem] p-[2px] sm:rounded-[2rem] ${OUTER_GRADIENT}`}
             >
-              <div className="flex items-center justify-between gap-3 rounded-[1.5rem] border border-white/10 bg-white/10 px-3 py-3 backdrop-blur-xl shadow-[0_8px_22px_rgba(0,0,0,0.14)] sm:rounded-[2rem] sm:px-4">
+              <div className={`flex items-center justify-between gap-3 rounded-[1.5rem] border border-white/10 ${CARD_GRADIENT} px-3 py-3 backdrop-blur-xl shadow-[0_8px_22px_rgba(0,0,0,0.14)] sm:rounded-[2rem] sm:px-4`}>
                 <div className="flex min-w-0 items-center gap-3 sm:gap-4">
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-full border border-yellow-100/20 bg-white/10 shadow-[0_0_16px_rgba(59,130,246,0.16)] sm:h-16 sm:w-16">
                     <img
