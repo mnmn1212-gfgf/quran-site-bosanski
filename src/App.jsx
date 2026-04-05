@@ -39,13 +39,13 @@ const ACCENT = "#F7D774";
 const CTA_DARK = "#0D2240";
 
 const CARD_GRADIENT =
-  "bg-[linear-gradient(135deg,#192F59_0%,#1E3866_52%,#0E285B_100%)]";
+  "bg-[linear-gradient(135deg,rgba(8,28,59,0.98)_0%,rgba(11,34,71,0.96)_52%,rgba(16,47,94,0.94)_100%)]";
 const CARD_INNER_GRADIENT =
-  "bg-[linear-gradient(135deg,#263B63_0%,#243C69_55%,#25406F_100%)]";
-const CARD_BUTTON_FILL =
-  "bg-[linear-gradient(135deg,#495C80_0%,#4F6184_50%,#485B80_100%)]";
+  "bg-[linear-gradient(135deg,rgba(21,44,88,0.92)_0%,rgba(26,56,108,0.88)_100%)]";
+const CARD_SOFT_FILL = "bg-white/[0.04]";
+const CARD_BUTTON_FILL = "bg-white/[0.06]";
 
-const OUTER_GRADIENT = CARD_INNER_GRADIENT;
+const OUTER_GRADIENT = CARD_GRADIENT;
 const INNER_GRADIENT = CARD_INNER_GRADIENT;
 
 const fadeUp = {
@@ -558,7 +558,7 @@ function HeroAudioPlayer({ isMobile }) {
   };
 
   return (
-    <div className={`mt-5 rounded-[1.35rem] border border-white/10 ${CARD_INNER_GRADIENT} p-3 sm:p-4`}>
+    <div className="mt-5 rounded-[1.35rem] border border-white/10 bg-[#0a1730]/60 p-3 sm:p-4">
       <audio
         ref={audioRef}
         preload="metadata"
@@ -581,7 +581,7 @@ function HeroAudioPlayer({ isMobile }) {
         <button
           type="button"
           onClick={togglePlay}
-          className={`flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 ${CARD_BUTTON_FILL} text-white transition hover:brightness-110`}
+          className="flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-white transition hover:bg-white/10"
           aria-label={isPlaying ? "Pauziraj" : "Pokreni"}
         >
           {isPlaying ? (
@@ -594,7 +594,7 @@ function HeroAudioPlayer({ isMobile }) {
         <button
           type="button"
           onClick={() => seekBy(-10)}
-          className={`flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 ${CARD_BUTTON_FILL} text-white transition hover:brightness-110`}
+          className="flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-white transition hover:bg-white/10"
           aria-label="Vrati nazad"
         >
           <SkipBack className="h-4 w-4" style={{ color: ACCENT }} />
@@ -603,7 +603,7 @@ function HeroAudioPlayer({ isMobile }) {
         <button
           type="button"
           onClick={replay}
-          className={`flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 ${CARD_BUTTON_FILL} text-white transition hover:brightness-110`}
+          className="flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-white transition hover:bg-white/10"
           aria-label="Pokreni ponovo"
         >
           <RotateCcw className="h-4 w-4" style={{ color: ACCENT }} />
@@ -612,7 +612,7 @@ function HeroAudioPlayer({ isMobile }) {
         <button
           type="button"
           onClick={() => seekBy(10)}
-          className={`flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 ${CARD_BUTTON_FILL} text-white transition hover:brightness-110`}
+          className="flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-white transition hover:bg-white/10"
           aria-label="Premotaj naprijed"
         >
           <SkipForward className="h-4 w-4" style={{ color: ACCENT }} />
@@ -621,7 +621,7 @@ function HeroAudioPlayer({ isMobile }) {
         <button
           type="button"
           onClick={toggleMute}
-          className={`flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 ${CARD_BUTTON_FILL} text-white transition hover:brightness-110`}
+          className="flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-white transition hover:bg-white/10"
           aria-label="Zvuk"
         >
           <Volume2
@@ -684,9 +684,9 @@ function StructuredCard({ icon: Icon, title, desc, isMobile }) {
       whileHover={isMobile ? {} : { y: -6, scale: 1.01 }}
       className={`${gradientOuterCard} h-full p-4 sm:p-5`}
     >
-      <div className={`h-full rounded-[1.5rem] border border-white/10 ${CARD_INNER_GRADIENT} p-4`}>
+      <div className="h-full rounded-[1.5rem] border border-white/10 bg-white/[0.06] p-4">
         <div className={`flex items-center gap-3 rounded-2xl border border-white/10 ${CARD_INNER_GRADIENT} px-4 py-3`}>
-          <div className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-white/10 ${CARD_BUTTON_FILL}`}>
+          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.06]">
             <Icon className="h-5 w-5" style={{ color: ACCENT }} />
           </div>
           <h3 className="text-base font-bold leading-7 text-white sm:text-lg lg:text-xl">
@@ -707,13 +707,13 @@ function IdentityCard({ icon: Icon, title, text, large = false, isMobile }) {
       whileHover={isMobile ? {} : { y: -6, scale: 1.01 }}
       className={`${softCard} h-full p-4 sm:p-5`}
     >
-      <div className={`h-full rounded-[1.5rem] border border-white/10 ${CARD_INNER_GRADIENT} p-4`}>
+      <div className="h-full rounded-[1.5rem] border border-white/10 bg-white/[0.06] p-4">
         <div className={`flex items-center gap-3 rounded-2xl border border-white/10 ${CARD_INNER_GRADIENT} px-4 py-3`}>
-          <div className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-white/10 ${CARD_BUTTON_FILL}`}>
+          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.06]">
             <Icon className="h-5 w-5" style={{ color: ACCENT }} />
           </div>
           <div
-            className={`rounded-2xl border border-white/10 ${CARD_BUTTON_FILL} px-4 py-2 font-bold text-white ${
+            className={`rounded-2xl border border-white/10 bg-white/5 px-4 py-2 font-bold text-white ${
               large ? "text-lg sm:text-xl" : "text-base sm:text-lg"
             }`}
           >
@@ -740,9 +740,9 @@ function ImpactCard({ icon: Icon, title, desc, isMobile }) {
       whileHover={isMobile ? {} : { y: -6, scale: 1.01 }}
       className={`${softCard} h-full p-4 sm:p-5`}
     >
-      <div className={`h-full rounded-[1.5rem] border border-white/10 ${CARD_INNER_GRADIENT} p-4`}>
+      <div className="h-full rounded-[1.5rem] border border-white/10 bg-white/[0.06] p-4">
         <div className={`flex items-center gap-3 rounded-2xl border border-white/10 ${CARD_INNER_GRADIENT} px-4 py-3`}>
-          <div className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-white/10 ${CARD_BUTTON_FILL}`}>
+          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.06]">
             <Icon className="h-5 w-5" style={{ color: ACCENT }} />
           </div>
           <h3 className="text-base font-bold text-white sm:text-lg lg:text-xl">
@@ -898,13 +898,13 @@ function ProtectedHlsVideoCard({
             className="absolute inset-0 flex items-center justify-center bg-black/15 transition hover:bg-black/10"
             aria-label="Pokreni video"
           >
-            <span className={`flex h-16 w-16 items-center justify-center rounded-full border border-white/20 ${CARD_BUTTON_FILL} backdrop-blur-md shadow-[0_0_22px_rgba(59,130,246,0.18)] sm:h-18 sm:w-18`}>
+            <span className="flex h-16 w-16 items-center justify-center rounded-full border border-white/20 bg-white/10 backdrop-blur-md shadow-[0_0_22px_rgba(59,130,246,0.18)] sm:h-18 sm:w-18">
               <Play className="ml-1 h-7 w-7 text-white" />
             </span>
           </button>
         )}
 
-        <div className={`pointer-events-none absolute right-3 top-3 rounded-full border border-white/10 ${CARD_BUTTON_FILL} px-3 py-1 text-[11px] text-white/80 backdrop-blur-md`}>
+        <div className="pointer-events-none absolute right-3 top-3 rounded-full border border-white/10 bg-black/35 px-3 py-1 text-[11px] text-white/80 backdrop-blur-md">
           {isReady ? "Prikaz prije pokretanja je spreman" : "Priprema pregleda u toku"}
         </div>
       </div>
@@ -914,7 +914,7 @@ function ProtectedHlsVideoCard({
           <button
             type="button"
             onClick={toggleMute}
-            className={`flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 ${CARD_BUTTON_FILL} text-white transition hover:brightness-110`}
+            className="flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-white transition hover:bg-white/10"
             aria-label="Isključi ili uključi zvuk"
           >
             <Volume2
@@ -926,7 +926,7 @@ function ProtectedHlsVideoCard({
           <button
             type="button"
             onClick={replayVideo}
-            className={`flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 ${CARD_BUTTON_FILL} text-white transition hover:brightness-110`}
+            className="flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-white transition hover:bg-white/10"
             aria-label="Pokreni ponovo"
           >
             <RotateCcw className="h-4 w-4" style={{ color: ACCENT }} />
@@ -935,7 +935,7 @@ function ProtectedHlsVideoCard({
           <button
             type="button"
             onClick={togglePlay}
-            className={`flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 ${CARD_BUTTON_FILL} text-white transition hover:brightness-110`}
+            className="flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-white transition hover:bg-white/10"
             aria-label={isPlaying ? "Pauziraj" : "Pokreni"}
           >
             {isPlaying ? (
@@ -1020,7 +1020,7 @@ export default function QuranTranslationLandingPage() {
         dir="ltr"
         className="relative min-h-screen overflow-hidden bg-transparent text-white"
       >
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(30,64,175,0.25),transparent_30%),radial-gradient(circle_at_80%_20%,rgba(30,58,138,0.25),transparent_25%),linear-gradient(180deg,#040D23_0%,#071131_35%,#081837_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(30,64,175,0.25),transparent_30%),radial-gradient(circle_at_80%_20%,rgba(30,58,138,0.25),transparent_25%),linear-gradient(180deg,#020617_0%,#0A1F44_50%,#0F2A5F_100%)]" />
 
         {!isMobile && (
           <>
@@ -1042,9 +1042,9 @@ export default function QuranTranslationLandingPage() {
               variants={fadeUp}
               className={`mx-auto rounded-[1.5rem] p-[2px] sm:rounded-[2rem] ${OUTER_GRADIENT}`}
             >
-              <div className={`flex items-center justify-between gap-3 rounded-[1.5rem] border border-white/10 ${CARD_INNER_GRADIENT} px-3 py-3 backdrop-blur-xl shadow-[0_8px_22px_rgba(0,0,0,0.14)] sm:rounded-[2rem] sm:px-4`}>
+              <div className="flex items-center justify-between gap-3 rounded-[1.5rem] border border-white/10 bg-white/10 px-3 py-3 backdrop-blur-xl shadow-[0_8px_22px_rgba(0,0,0,0.14)] sm:rounded-[2rem] sm:px-4">
                 <div className="flex min-w-0 items-center gap-3 sm:gap-4">
-                  <div className={`flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-full border border-yellow-100/20 ${CARD_BUTTON_FILL} shadow-[0_0_16px_rgba(59,130,246,0.16)] sm:h-16 sm:w-16`}>
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-full border border-yellow-100/20 bg-white/10 shadow-[0_0_16px_rgba(59,130,246,0.16)] sm:h-16 sm:w-16">
                     <img
                       src={sanaLogo}
                       alt="Logo Sana Kur'anskih Kanala"
@@ -1063,7 +1063,7 @@ export default function QuranTranslationLandingPage() {
                     <a
                       key={item.href}
                       href={item.href}
-                      className={`rounded-full border border-white/10 ${CARD_BUTTON_FILL} px-4 py-2 text-sm font-medium text-white/85 transition hover:brightness-110 hover:text-white`}
+                      className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-white/85 transition hover:border-blue-200/30 hover:bg-white/10 hover:text-white"
                     >
                       {item.label}
                     </a>
@@ -1073,7 +1073,7 @@ export default function QuranTranslationLandingPage() {
                 <button
                   type="button"
                   onClick={() => setMenuOpen((v) => !v)}
-                  className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-white/10 ${CARD_BUTTON_FILL} md:hidden`}
+                  className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-white/5 md:hidden"
                 >
                   <Menu className="h-5 w-5" />
                 </button>
@@ -1081,7 +1081,7 @@ export default function QuranTranslationLandingPage() {
             </motion.div>
 
             {menuOpen && (
-              <div className={`mt-3 rounded-[1.4rem] p-3 md:hidden sm:rounded-[1.6rem] sm:p-4 ${softCard}`}>
+              <div className={`mt-3 rounded-[1.4rem] p-3 md:hidden sm:rounded-[1.6rem] sm:p-4 ${glass}`}>
                 <div className="grid gap-2">
                   {navItems.map((item) => (
                     <a
@@ -1105,7 +1105,7 @@ export default function QuranTranslationLandingPage() {
                 initial="hidden"
                 animate="show"
                 variants={fadeUp}
-                className={`mb-5 inline-flex items-center gap-2 rounded-full border border-white/10 ${CARD_BUTTON_FILL} px-4 py-2 text-xs backdrop-blur-md sm:text-sm`}
+                className="mb-5 inline-flex items-center gap-2 rounded-full border border-yellow-200/20 bg-white/10 px-4 py-2 text-xs backdrop-blur-md sm:text-sm"
                 style={{ color: ACCENT }}
               >
                 <Stars className="h-4 w-4" style={{ color: ACCENT }} />
@@ -1161,7 +1161,7 @@ export default function QuranTranslationLandingPage() {
                   href="https://youtube.com/@san-ar-m5i?si=RpejWa62nYgs2LGQ"
                   target="_blank"
                   rel="noreferrer"
-                  className={`inline-flex items-center justify-center gap-3 rounded-2xl border border-white/10 ${CARD_BUTTON_FILL} px-6 py-3.5 text-sm font-semibold text-white backdrop-blur-md transition hover:brightness-110 sm:px-7 sm:py-4 sm:text-base`}
+                  className="inline-flex items-center justify-center gap-3 rounded-2xl border border-white/15 bg-white/10 px-6 py-3.5 text-sm font-semibold text-white backdrop-blur-md transition hover:bg-white/15 sm:px-7 sm:py-4 sm:text-base"
                 >
                   <Play className="h-5 w-5" />
                   Posjetite naš kanal
@@ -1210,7 +1210,7 @@ export default function QuranTranslationLandingPage() {
                 transition={isMobile ? {} : { duration: 7, repeat: Infinity, ease: "easeInOut" }}
                 className={`relative mx-auto max-w-2xl p-3 sm:p-4 ${softCard}`}
               >
-                <div className={`rounded-[1.6rem] border border-white/10 ${CARD_INNER_GRADIENT} p-4 sm:p-6`}>
+                <div className="rounded-[1.6rem] border border-white/10 bg-gradient-to-br from-white/10 to-white/5 p-4 sm:p-6">
                   <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                     <div>
                       <p className="text-xs text-white/60 sm:text-sm">Trenutni jezik</p>
@@ -1218,7 +1218,7 @@ export default function QuranTranslationLandingPage() {
                         Kur'an na arapskom jeziku
                       </h3>
                     </div>
-                    <div className={`w-fit rounded-2xl border border-white/10 ${CARD_BUTTON_FILL} px-4 py-2 text-xs text-white sm:text-sm`}>
+                    <div className="w-fit rounded-2xl border border-blue-300/20 bg-white/[0.06] px-4 py-2 text-xs text-white sm:text-sm">
                       Uživo
                     </div>
                   </div>
@@ -1276,7 +1276,7 @@ export default function QuranTranslationLandingPage() {
                       className={`w-full rounded-[1.4rem] border border-white/10 ${CARD_GRADIENT} px-5 py-4 text-center backdrop-blur-md shadow-[0_6px_16px_rgba(0,0,0,0.12)] sm:min-w-[220px] sm:w-auto sm:rounded-[1.6rem]`}
                     >
                       <div className="flex items-center justify-center gap-3">
-                        <div className={`flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 ${CARD_BUTTON_FILL} sm:h-11 sm:w-11`}>
+                        <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-white/10 bg-white/5 sm:h-11 sm:w-11">
                           <Icon className="h-5 w-5" style={{ color: ACCENT }} />
                         </div>
                         <div className="text-sm font-bold text-white sm:text-base">{item.title}</div>
@@ -1340,13 +1340,13 @@ export default function QuranTranslationLandingPage() {
               className={`relative overflow-hidden p-5 sm:p-6 md:p-10 ${gradientOuterCard}`}
             >
               {!isMobile && (
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(30,64,175,0.20),transparent_30%),radial-gradient(circle_at_80%_20%,rgba(30,58,138,0.20),transparent_25%),linear-gradient(180deg,#040D23_0%,#071131_35%,#081837_100%)]" />
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(30,64,175,0.25),transparent_30%),radial-gradient(circle_at_80%_20%,rgba(30,58,138,0.25),transparent_25%),linear-gradient(180deg,#020617_0%,#0A1F44_50%,#0F2A5F_100%)]" />
               )}
 
               <div className="relative z-10">
                 <div className="grid gap-6 lg:grid-cols-2 lg:items-stretch lg:gap-8">
                   <div className={`rounded-[1.8rem] border border-white/10 ${CARD_INNER_GRADIENT} p-4 sm:p-6`}>
-                    <div className={`h-full rounded-2xl border border-white/10 ${CARD_INNER_GRADIENT} p-4 sm:p-5`}>
+                    <div className="h-full rounded-2xl border border-white/10 bg-white/[0.06] p-4 sm:p-5">
                       <h2 className="text-2xl font-black sm:text-3xl lg:text-4xl">
                         Pouzdano partnersko izvođenje
                       </h2>
@@ -1363,14 +1363,14 @@ export default function QuranTranslationLandingPage() {
                   </div>
 
                   <div className={`rounded-[1.8rem] border border-white/10 ${CARD_INNER_GRADIENT} p-4 sm:p-6`}>
-                    <div className={`flex h-full flex-col justify-center rounded-2xl border border-white/10 ${CARD_INNER_GRADIENT} p-4 sm:p-5`}>
+                    <div className="flex h-full flex-col justify-center rounded-2xl border border-white/10 bg-white/[0.06] p-4 sm:p-5">
                       <div className="text-sm text-white/60">Zvanična stranica</div>
                       <div className="mt-2 text-xl font-bold sm:text-2xl">Jasco Media City</div>
                       <a
                         href="https://jascomediacity.net/"
                         target="_blank"
                         rel="noreferrer"
-                        className={`mt-5 inline-flex w-fit items-center gap-2 rounded-2xl border border-white/10 ${CARD_BUTTON_FILL} px-5 py-3 text-sm text-white transition hover:brightness-110 sm:text-base`}
+                        className={`mt-5 inline-flex w-fit items-center gap-2 rounded-2xl border border-white/10 ${CARD_BUTTON_FILL} px-5 py-3 text-sm text-white transition hover:bg-white/10 sm:text-base`}
                       >
                         Posjetite Jasco
                         <ExternalLink className="h-4 w-4" />
@@ -1551,7 +1551,7 @@ export default function QuranTranslationLandingPage() {
             >
               <div className="text-center">
                 <div
-                  className={`inline-flex max-w-full items-center gap-3 rounded-full border border-white/10 ${CARD_BUTTON_FILL} px-5 py-3 text-base font-semibold backdrop-blur-md shadow-[0_6px_16px_rgba(0,0,0,0.12)] sm:px-7 sm:py-4 sm:text-lg`}
+                  className="inline-flex max-w-full items-center gap-3 rounded-full border border-white/10 bg-white/10 px-5 py-3 text-base font-semibold backdrop-blur-md shadow-[0_6px_16px_rgba(0,0,0,0.12)] sm:px-7 sm:py-4 sm:text-lg"
                   style={{ color: ACCENT }}
                 >
                   <Sparkles className="h-5 w-5 shrink-0" style={{ color: ACCENT }} />
@@ -1567,15 +1567,15 @@ export default function QuranTranslationLandingPage() {
                 className={`mt-8 rounded-[2rem] p-4 sm:p-6 md:p-8 ${gradientOuterCard}`}
               >
                 <div className={`rounded-[2rem] border border-white/10 ${CARD_INNER_GRADIENT} p-4 sm:p-6`}>
-                  <div className={`rounded-[1.5rem] border border-white/10 ${CARD_INNER_GRADIENT} p-4 sm:p-5`}>
+                  <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.06] p-4 sm:p-5">
                     <div className="mb-4 text-xl font-bold sm:text-2xl">Kontaktirajte nas</div>
                     <div className="space-y-3 text-white/75">
-                      <div className={`rounded-2xl border border-white/10 ${CARD_BUTTON_FILL} px-4 py-3 text-sm sm:text-base`}>
+                      <div className="rounded-2xl bg-white/5 px-4 py-3 text-sm sm:text-base">
                         Naš tim će vam rado pomoći i odgovoriti u najkraćem mogućem roku.
                       </div>
                       <a
                         href="mailto:snachannel159@gmail.com"
-                        className={`flex items-center justify-center gap-3 rounded-2xl border border-white/10 ${CARD_BUTTON_FILL} px-4 py-3 text-center text-sm font-semibold text-white transition hover:brightness-110 sm:text-base`}
+                        className="flex items-center justify-center gap-3 rounded-2xl border border-blue-200/20 bg-white/[0.06] px-4 py-3 text-center text-sm font-semibold text-white transition hover:bg-white/10 sm:text-base"
                       >
                         <Mail className="h-4 w-4" style={{ color: ACCENT }} />
                         Pošalji
@@ -1588,12 +1588,12 @@ export default function QuranTranslationLandingPage() {
           </section>
 
           <footer className="pb-8 pt-4 sm:pb-10">
-            <div className={`rounded-[2rem] px-4 py-6 sm:px-6 sm:py-8 lg:px-10 ${softCard}`}>
+            <div className={`rounded-[2rem] px-4 py-6 sm:px-6 sm:py-8 lg:px-10 ${glass}`}>
               <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr_1fr]">
                 <div
                   className={`rounded-[1.8rem] border border-white/10 p-4 text-center sm:p-6 ${CARD_GRADIENT} backdrop-blur-md flex h-full flex-col items-center justify-center`}
                 >
-                  <div className={`mx-auto flex h-20 w-20 items-center justify-center rounded-full border border-white/15 ${CARD_BUTTON_FILL} shadow-[0_0_18px_rgba(255,255,255,0.06)] backdrop-blur-md sm:h-24 sm:w-24`}>
+                  <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full border border-white/15 bg-white/10 shadow-[0_0_18px_rgba(255,255,255,0.06)] backdrop-blur-md sm:h-24 sm:w-24">
                     <img
                       src={sanaLogo}
                       alt="Sana logo"
@@ -1604,7 +1604,7 @@ export default function QuranTranslationLandingPage() {
                   </div>
 
                   <div className="mt-4">
-                    <span className={`inline-flex rounded-full border border-white/10 ${CARD_BUTTON_FILL} px-4 py-2 text-xs text-white/90 sm:px-5 sm:text-sm`}>
+                    <span className="inline-flex rounded-full border border-white/10 bg-white/10 px-4 py-2 text-xs text-white/90 sm:px-5 sm:text-sm">
                       Sana Kur'anski Kanali
                     </span>
                   </div>
@@ -1613,14 +1613,14 @@ export default function QuranTranslationLandingPage() {
                     Sana... poruka svjetovima
                   </div>
 
-                  <p className={`mx-auto mt-4 max-w-[30rem] rounded-[1.4rem] border border-white/10 ${CARD_INNER_GRADIENT} px-4 py-4 text-sm leading-7 text-white/78 sm:px-5 sm:text-base sm:leading-8`}>
+                  <p className="mx-auto mt-4 max-w-[30rem] rounded-[1.4rem] border border-white/10 bg-white/[0.04] px-4 py-4 text-sm leading-7 text-white/78 sm:px-5 sm:text-base sm:leading-8">
                     Audio i video kanali za prijevod značenja Kur'ana na sve svjetske jezike, kroz vakufski projekat koji spaja ljepotu prikaza, preciznost značenja i duh poruke.
                   </p>
                 </div>
 
                 <div className={`rounded-[1.8rem] border border-white/10 ${CARD_GRADIENT} p-4 backdrop-blur-md sm:p-5 flex flex-col items-center justify-center text-center`}>
                   <div className="mb-5 flex flex-col items-center justify-center gap-4 text-lg font-bold text-white sm:text-xl">
-                    <div className={`flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 ${CARD_BUTTON_FILL} shadow-[0_8px_18px_rgba(0,0,0,0.14)]`}>
+                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-white/5 shadow-[0_8px_18px_rgba(0,0,0,0.14)]">
                       <MessageCircle className="h-6 w-6" style={{ color: ACCENT }} />
                     </div>
                     <span>Naši podaci</span>
@@ -1629,7 +1629,7 @@ export default function QuranTranslationLandingPage() {
                   <div className="w-full space-y-4 text-white/72">
                     <a
                       href="mailto:snachannel159@gmail.com"
-                      className={`flex items-center justify-center gap-3 break-all rounded-2xl border border-white/10 ${CARD_INNER_GRADIENT} px-4 py-3 text-sm transition hover:brightness-110 sm:text-base`}
+                      className={`flex items-center justify-center gap-3 break-all rounded-2xl border border-white/10 ${CARD_INNER_GRADIENT} px-4 py-3 text-sm transition hover:bg-white/10 sm:text-base`}
                     >
                       <Mail className="h-4 w-4 shrink-0" style={{ color: ACCENT }} />
                       snachannel159@gmail.com
@@ -1646,7 +1646,7 @@ export default function QuranTranslationLandingPage() {
                       href="https://www.facebook.com/share/1FVbmggbzc/"
                       target="_blank"
                       rel="noreferrer"
-                      className={`flex items-center justify-center gap-2 rounded-xl border border-white/10 ${CARD_BUTTON_FILL} py-3 text-sm font-semibold text-white transition hover:brightness-110`}
+                      className="flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/5 py-3 text-sm font-semibold text-white transition hover:scale-[1.01] hover:bg-white/10"
                     >
                       <Globe className="h-4 w-4" style={{ color: ACCENT }} />
                       Pratite nas na Facebooku
@@ -1660,7 +1660,7 @@ export default function QuranTranslationLandingPage() {
 
                 <div className={`rounded-[1.8rem] border border-white/10 ${CARD_GRADIENT} p-4 backdrop-blur-md sm:p-5 flex flex-col items-center justify-center text-center`}>
                   <div className="mb-5 flex flex-col items-center justify-center gap-4 text-lg font-bold text-white sm:text-xl">
-                    <div className={`flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 ${CARD_BUTTON_FILL} shadow-[0_8px_18px_rgba(0,0,0,0.14)]`}>
+                    <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-white/5 shadow-[0_8px_18px_rgba(0,0,0,0.14)]">
                       <Link2 className="h-6 w-6" style={{ color: ACCENT }} />
                     </div>
                     <span>Linkovi naše aplikacije</span>
@@ -1676,10 +1676,10 @@ export default function QuranTranslationLandingPage() {
                         href="https://play.google.com/store/apps/details?id=com.sana_all&pcampaignid=web_share"
                         target="_blank"
                         rel="noreferrer"
-                        className={`group rounded-[1.3rem] border border-white/10 ${CARD_BUTTON_FILL} p-4 transition hover:-translate-y-0.5 hover:brightness-110`}
+                        className="group rounded-[1.3rem] border border-white/10 bg-white/[0.06] p-4 transition hover:-translate-y-0.5 hover:bg-white/10"
                       >
                         <div className="flex items-center justify-center gap-3">
-                          <div className={`flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 ${CARD_BUTTON_FILL} text-white`}>
+                          <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.06] text-white">
                             <GooglePlayIcon />
                           </div>
                           <span className="whitespace-nowrap text-sm font-bold text-white sm:text-base">
@@ -1692,10 +1692,10 @@ export default function QuranTranslationLandingPage() {
                         href="https://apps.apple.com/us/app/sana-tv-%D8%B3%D9%86%D8%A7/id6742054715"
                         target="_blank"
                         rel="noreferrer"
-                        className={`group rounded-[1.3rem] border border-white/10 ${CARD_BUTTON_FILL} p-4 transition hover:-translate-y-0.5 hover:brightness-110`}
+                        className="group rounded-[1.3rem] border border-white/10 bg-white/[0.06] p-4 transition hover:-translate-y-0.5 hover:bg-white/10"
                       >
                         <div className="flex items-center justify-center gap-3">
-                          <div className={`flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 ${CARD_BUTTON_FILL} text-white`}>
+                          <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.06] text-white">
                             <AppStoreIcon />
                           </div>
                           <span className="text-sm font-bold text-white sm:text-base">
@@ -1715,7 +1715,7 @@ export default function QuranTranslationLandingPage() {
                         href="https://www.youtube.com/@SAN-AR-m5i"
                         target="_blank"
                         rel="noreferrer"
-                        className={`mt-4 flex w-full items-center justify-center gap-2 rounded-xl border border-white/10 ${CARD_BUTTON_FILL} py-3 text-sm font-bold text-white transition hover:brightness-110`}
+                        className="mt-4 flex w-full items-center justify-center gap-2 rounded-xl border border-blue-200/20 bg-white/[0.06] py-3 text-sm font-bold text-white transition hover:scale-[1.01] hover:bg-white/10"
                       >
                         <Sparkles className="h-4 w-4" />
                         Započni sada
