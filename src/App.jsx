@@ -62,7 +62,7 @@ const containerClass =
   "relative z-10 mx-auto w-full max-w-[1680px] px-4 sm:px-6 lg:px-10 xl:px-14";
 const glass =
   "border border-white/10 bg-white/10 md:backdrop-blur-xl backdrop-blur-sm shadow-[0_8px_22px_rgba(0,0,0,0.14)]";
-const softCard = `rounded-[2rem] ${glass}`;
+const softCard = `rounded-[2rem] border border-white/10 ${OUTER_GRADIENT} md:backdrop-blur-xl backdrop-blur-sm shadow-[0_8px_22px_rgba(0,0,0,0.14)]`;
 const gradientOuterCard = `rounded-[2rem] border border-white/10 ${OUTER_GRADIENT} md:backdrop-blur-xl backdrop-blur-sm shadow-[0_8px_22px_rgba(0,0,0,0.14)]`;
 
 const navItems = [
@@ -679,16 +679,16 @@ function StructuredCard({ icon: Icon, title, desc, isMobile }) {
       whileHover={isMobile ? {} : { y: -6, scale: 1.01 }}
       className={`${gradientOuterCard} h-full p-4 sm:p-5`}
     >
-      <div className="h-full rounded-[1.5rem] border border-white/10 bg-white/5 p-4">
-        <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-gradient-to-r from-white/5 to-white/10 px-4 py-3">
-          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-blue-300/10">
+      <div className="h-full rounded-[1.5rem] border border-white/10 bg-white/[0.06] p-4">
+        <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-[linear-gradient(135deg,rgba(69,103,156,0.82)_0%,rgba(57,88,138,0.88)_100%)] px-4 py-3">
+          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-[#2b4779]/80">
             <Icon className="h-5 w-5" style={{ color: ACCENT }} />
           </div>
           <h3 className="text-base font-bold leading-7 text-white sm:text-lg lg:text-xl">
             {title}
           </h3>
         </div>
-        <div className="mt-4 rounded-2xl border border-white/10 bg-[#08142b]/55 px-4 py-4 text-sm leading-7 text-white/78 sm:text-base sm:leading-8">
+        <div className="mt-4 rounded-2xl border border-white/10 bg-[#102a57]/92 px-4 py-4 text-sm leading-7 text-white/78 sm:text-base sm:leading-8">
           {desc}
         </div>
       </div>
@@ -702,9 +702,9 @@ function IdentityCard({ icon: Icon, title, text, large = false, isMobile }) {
       whileHover={isMobile ? {} : { y: -6, scale: 1.01 }}
       className={`${softCard} h-full p-4 sm:p-5`}
     >
-      <div className="h-full rounded-[1.5rem] border border-white/10 bg-white/5 p-4">
-        <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-gradient-to-r from-white/5 to-white/10 px-4 py-3">
-          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-blue-300/10">
+      <div className="h-full rounded-[1.5rem] border border-white/10 bg-white/[0.06] p-4">
+        <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-[linear-gradient(135deg,rgba(69,103,156,0.82)_0%,rgba(57,88,138,0.88)_100%)] px-4 py-3">
+          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-[#2b4779]/80">
             <Icon className="h-5 w-5" style={{ color: ACCENT }} />
           </div>
           <div
@@ -716,7 +716,7 @@ function IdentityCard({ icon: Icon, title, text, large = false, isMobile }) {
           </div>
         </div>
         <div
-          className={`mt-4 rounded-2xl border border-white/10 bg-[#08142b]/55 px-4 py-4 text-white/80 ${
+          className={`mt-4 rounded-2xl border border-white/10 bg-[#102a57]/92 px-4 py-4 text-white/80 ${
             large
               ? "text-base leading-8 sm:text-lg sm:leading-9 lg:text-xl lg:leading-10"
               : "text-base leading-8 sm:text-lg"
@@ -735,16 +735,16 @@ function ImpactCard({ icon: Icon, title, desc, isMobile }) {
       whileHover={isMobile ? {} : { y: -6, scale: 1.01 }}
       className={`${softCard} h-full p-4 sm:p-5`}
     >
-      <div className="h-full rounded-[1.5rem] border border-white/10 bg-white/5 p-4">
-        <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-gradient-to-r from-white/5 to-white/10 px-4 py-3">
-          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-yellow-100/10">
+      <div className="h-full rounded-[1.5rem] border border-white/10 bg-white/[0.06] p-4">
+        <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-[linear-gradient(135deg,rgba(69,103,156,0.82)_0%,rgba(57,88,138,0.88)_100%)] px-4 py-3">
+          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border border-white/10 bg-[#2b4779]/80">
             <Icon className="h-5 w-5" style={{ color: ACCENT }} />
           </div>
           <h3 className="text-base font-bold text-white sm:text-lg lg:text-xl">
             {title}
           </h3>
         </div>
-        <div className="mt-4 rounded-2xl border border-white/10 bg-[#08142b]/55 px-4 py-4 text-sm leading-7 text-white/78 sm:text-base sm:leading-8">
+        <div className="mt-4 rounded-2xl border border-white/10 bg-[#102a57]/92 px-4 py-4 text-sm leading-7 text-white/78 sm:text-base sm:leading-8">
           {desc}
         </div>
       </div>
@@ -904,7 +904,7 @@ function ProtectedHlsVideoCard({
         </div>
       </div>
 
-      <div className="mt-4 rounded-[1.3rem] border border-white/10 bg-[#08142b]/55 p-3 sm:p-4">
+      <div className="mt-4 rounded-[1.3rem] border border-white/10 bg-[#102a57]/92 p-3 sm:p-4">
         <div className="flex flex-wrap items-center gap-2">
           <button
             type="button"
@@ -1081,7 +1081,7 @@ export default function QuranTranslationLandingPage() {
                       key={item.href}
                       href={item.href}
                       onClick={() => setMenuOpen(false)}
-                      className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white/85 sm:text-base"
+                      className="rounded-2xl border border-white/10 bg-[linear-gradient(135deg,rgba(69,103,156,0.82)_0%,rgba(57,88,138,0.88)_100%)] px-4 py-3 text-sm text-white/85 sm:text-base"
                     >
                       {item.label}
                     </a>
@@ -1216,7 +1216,7 @@ export default function QuranTranslationLandingPage() {
                     </div>
                   </div>
 
-                  <div className="mt-6 rounded-[1.4rem] border border-white/10 bg-[#091730]/75 p-4 sm:mt-8 sm:p-6">
+                  <div className="mt-6 rounded-[1.4rem] border border-white/10 bg-[#102a57]/92 p-4 sm:mt-8 sm:p-6">
                     <div className="mb-4 flex items-start gap-3 text-sm text-white/80 sm:items-center sm:text-base">
                       <Headphones className="mt-0.5 h-5 w-5 shrink-0 text-blue-200 sm:mt-0" />
                       <span>Slušajte učenje uz vizuelni prikaz značenja Kur'ana</span>
@@ -1243,7 +1243,7 @@ export default function QuranTranslationLandingPage() {
                       {heroCards.map((item) => (
                         <div
                           key={item.label}
-                          className="rounded-2xl border border-white/10 bg-white/5 p-3 sm:p-4"
+                          className="rounded-2xl border border-white/10 bg-[linear-gradient(135deg,rgba(69,103,156,0.82)_0%,rgba(57,88,138,0.88)_100%)] p-3 sm:p-4"
                         >
                           <div className="text-sm font-bold sm:text-lg" style={{ color: ACCENT }}>
                             {item.value}
@@ -1338,8 +1338,8 @@ export default function QuranTranslationLandingPage() {
 
               <div className="relative z-10">
                 <div className="grid gap-6 lg:grid-cols-2 lg:items-stretch lg:gap-8">
-                  <div className="rounded-[1.8rem] border border-white/10 bg-[#08142b]/45 p-4 sm:p-6">
-                    <div className="h-full rounded-2xl border border-white/10 bg-white/5 p-4 sm:p-5">
+                  <div className="rounded-[1.8rem] border border-white/10 bg-[#102a57]/92 p-4 sm:p-6">
+                    <div className="h-full rounded-2xl border border-white/10 bg-white/[0.06] p-4 sm:p-5">
                       <h2 className="text-2xl font-black sm:text-3xl lg:text-4xl">
                         Pouzdano partnersko izvođenje
                       </h2>
@@ -1355,8 +1355,8 @@ export default function QuranTranslationLandingPage() {
                     </div>
                   </div>
 
-                  <div className="rounded-[1.8rem] border border-white/10 bg-[#08142b]/70 p-4 sm:p-6">
-                    <div className="flex h-full flex-col justify-center rounded-2xl border border-white/10 bg-white/5 p-4 sm:p-5">
+                  <div className="rounded-[1.8rem] border border-white/10 bg-[#102a57]/92 p-4 sm:p-6">
+                    <div className="flex h-full flex-col justify-center rounded-2xl border border-white/10 bg-white/[0.06] p-4 sm:p-5">
                       <div className="text-sm text-white/60">Zvanična stranica</div>
                       <div className="mt-2 text-xl font-bold sm:text-2xl">Jasco Media City</div>
                       <a
@@ -1559,8 +1559,8 @@ export default function QuranTranslationLandingPage() {
               <div
                 className={`mt-8 rounded-[2rem] p-4 sm:p-6 md:p-8 ${gradientOuterCard}`}
               >
-                <div className="rounded-[2rem] border border-white/10 bg-[#08142b]/70 p-4 sm:p-6">
-                  <div className="rounded-[1.5rem] border border-white/10 bg-white/5 p-4 sm:p-5">
+                <div className="rounded-[2rem] border border-white/10 bg-[#102a57]/92 p-4 sm:p-6">
+                  <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.06] p-4 sm:p-5">
                     <div className="mb-4 text-xl font-bold sm:text-2xl">Kontaktirajte nas</div>
                     <div className="space-y-3 text-white/75">
                       <div className="rounded-2xl bg-white/5 px-4 py-3 text-sm sm:text-base">
@@ -1611,7 +1611,7 @@ export default function QuranTranslationLandingPage() {
                   </p>
                 </div>
 
-                <div className="rounded-[1.6rem] border border-white/10 bg-white/5 p-4 sm:p-5 flex flex-col items-center justify-center text-center">
+                <div className="rounded-[1.6rem] border border-white/10 bg-white/[0.06] p-4 sm:p-5 flex flex-col items-center justify-center text-center">
                   <div className="mb-5 flex flex-col items-center justify-center gap-4 text-lg font-bold text-white sm:text-xl">
                     <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-white/5 shadow-[0_8px_18px_rgba(0,0,0,0.14)]">
                       <MessageCircle className="h-6 w-6" style={{ color: ACCENT }} />
@@ -1622,19 +1622,19 @@ export default function QuranTranslationLandingPage() {
                   <div className="w-full space-y-4 text-white/72">
                     <a
                       href="mailto:snachannel159@gmail.com"
-                      className="flex items-center justify-center gap-3 break-all rounded-2xl border border-white/10 bg-[#08142b]/50 px-4 py-3 text-sm transition hover:bg-white/10 sm:text-base"
+                      className="flex items-center justify-center gap-3 break-all rounded-2xl border border-white/10 bg-[#102a57]/92 px-4 py-3 text-sm transition hover:bg-white/10 sm:text-base"
                     >
                       <Mail className="h-4 w-4 shrink-0" style={{ color: ACCENT }} />
                       snachannel159@gmail.com
                     </a>
 
-                    <div className="flex items-center justify-center gap-3 rounded-2xl border border-white/10 bg-[#08142b]/50 px-4 py-3 text-sm sm:text-base">
+                    <div className="flex items-center justify-center gap-3 rounded-2xl border border-white/10 bg-[#102a57]/92 px-4 py-3 text-sm sm:text-base">
                       <MapPin className="h-4 w-4 shrink-0" style={{ color: ACCENT }} />
                       Amman - Jordan
                     </div>
                   </div>
 
-                  <div className="mt-6 w-full rounded-[1.4rem] border border-white/10 bg-[#08142b]/45 p-4">
+                  <div className="mt-6 w-full rounded-[1.4rem] border border-white/10 bg-[#102a57]/92 p-4">
                     <a
                       href="https://www.facebook.com/share/1FVbmggbzc/"
                       target="_blank"
@@ -1651,7 +1651,7 @@ export default function QuranTranslationLandingPage() {
                   </div>
                 </div>
 
-                <div className="rounded-[1.8rem] border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.08),rgba(255,255,255,0.04))] p-4 backdrop-blur-md sm:p-5 flex flex-col items-center justify-center text-center">
+                <div className="rounded-[1.8rem] border border-white/10 bg-[linear-gradient(135deg,rgba(8,28,59,0.96)_0%,rgba(14,44,92,0.93)_48%,rgba(28,71,138,0.90)_100%)] p-4 backdrop-blur-md sm:p-5 flex flex-col items-center justify-center text-center">
                   <div className="mb-5 flex flex-col items-center justify-center gap-4 text-lg font-bold text-white sm:text-xl">
                     <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-white/5 shadow-[0_8px_18px_rgba(0,0,0,0.14)]">
                       <Link2 className="h-6 w-6" style={{ color: ACCENT }} />
@@ -1659,7 +1659,7 @@ export default function QuranTranslationLandingPage() {
                     <span>Linkovi naše aplikacije</span>
                   </div>
 
-                  <div className="w-full rounded-[1.4rem] border border-white/10 bg-[#08142b]/45 p-4">
+                  <div className="w-full rounded-[1.4rem] border border-white/10 bg-[#102a57]/92 p-4">
                     <p className="mb-4 text-sm leading-7 text-white/65">
                       Preuzmite aplikaciju i jednostavno pratite kur'anski sadržaj putem zvaničnih platformi.
                     </p>
@@ -1669,10 +1669,10 @@ export default function QuranTranslationLandingPage() {
                         href="https://play.google.com/store/apps/details?id=com.sana_all&pcampaignid=web_share"
                         target="_blank"
                         rel="noreferrer"
-                        className="group rounded-[1.3rem] border border-white/10 bg-white/5 p-4 transition hover:-translate-y-0.5 hover:bg-white/10"
+                        className="group rounded-[1.3rem] border border-white/10 bg-white/[0.06] p-4 transition hover:-translate-y-0.5 hover:bg-white/10"
                       >
                         <div className="flex items-center justify-center gap-3">
-                          <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-blue-300/10 text-white">
+                          <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-[#2b4779]/80 text-white">
                             <GooglePlayIcon />
                           </div>
                           <span className="whitespace-nowrap text-sm font-bold text-white sm:text-base">
@@ -1685,10 +1685,10 @@ export default function QuranTranslationLandingPage() {
                         href="https://apps.apple.com/us/app/sana-tv-%D8%B3%D9%86%D8%A7/id6742054715"
                         target="_blank"
                         rel="noreferrer"
-                        className="group rounded-[1.3rem] border border-white/10 bg-white/5 p-4 transition hover:-translate-y-0.5 hover:bg-white/10"
+                        className="group rounded-[1.3rem] border border-white/10 bg-white/[0.06] p-4 transition hover:-translate-y-0.5 hover:bg-white/10"
                       >
                         <div className="flex items-center justify-center gap-3">
-                          <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-yellow-100/10 text-white">
+                          <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-white/10 bg-[#2b4779]/80 text-white">
                             <AppStoreIcon />
                           </div>
                           <span className="text-sm font-bold text-white sm:text-base">
@@ -1698,7 +1698,7 @@ export default function QuranTranslationLandingPage() {
                       </a>
                     </div>
 
-                    <div className="mt-5 rounded-[1.4rem] border border-white/10 bg-[#0b1d3e]/60 p-4">
+                    <div className="mt-5 rounded-[1.4rem] border border-white/10 bg-[#102a57]/92 p-4">
                       <div className="flex flex-wrap items-center justify-center gap-4 text-xs text-white/65">
                         <span>⭐ Ocjena 4.9</span>
                         <span>🌍 100+ država</span>
